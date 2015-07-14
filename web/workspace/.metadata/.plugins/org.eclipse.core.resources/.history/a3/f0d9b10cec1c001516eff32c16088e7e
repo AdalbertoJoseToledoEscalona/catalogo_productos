@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package modelo.beans;
+
+import modelo.eventboard.Evento;
+
+/**
+ * @author adalberto
+ *
+ */
+public class HiloOpera  implements Runnable {
+	public static Thread hilo;
+	public static boolean corriendo;
+	/**
+	 * 
+	 */
+	public HiloOpera() {
+		if(!corriendo) {
+			hilo = new Thread(this);
+		}
+	}
+
+	@Override
+	public void run() {
+		while (corriendo) {
+			
+			try {
+				Evento.sincronizardesdeOpera();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			try {
+				Thread.sleep(7*60*60*1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+
+}

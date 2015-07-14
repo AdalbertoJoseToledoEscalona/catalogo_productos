@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="catalogo_productos_consola">
+        <property name="context-root" value="catalogo_productos_consola"/>
+        <property name="java-output-path" value="/catalogo_productos_consola/build/classes"/>
+    </wb-module>
+</project-modules>
